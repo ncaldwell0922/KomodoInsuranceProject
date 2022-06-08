@@ -1,4 +1,5 @@
-﻿public class Developer
+﻿
+public class Developer
 {
     public Developer(){}
     public Developer(string firstName, string lastName)
@@ -10,5 +11,5 @@
     public int ID { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    public string PluralsightAccess { get; set; }
+    public bool PluralsightAccess { get; set; }
 }

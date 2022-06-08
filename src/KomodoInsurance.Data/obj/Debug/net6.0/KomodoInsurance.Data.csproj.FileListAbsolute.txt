@@ -1,0 +1,12 @@
+C:\Users\ncald\OneDrive\Documents\ElevenFiftyProjects\codingFoundations\dotnetProjects\KomodoInsuranceProject\src\KomodoInsurance.Data\obj\Debug\net6.0\KomodoInsurance.Data.csproj.AssemblyReference.cache
+C:\Users\ncald\OneDrive\Documents\ElevenFiftyProjects\codingFoundations\dotnetProjects\KomodoInsuranceProject\src\KomodoInsurance.Data\obj\Debug\net6.0\KomodoInsurance.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ncald\OneDrive\Documents\ElevenFiftyProjects\codingFoundations\dotnetProjects\KomodoInsuranceProject\src\KomodoInsurance.Data\obj\Debug\net6.0\KomodoInsurance.Data.AssemblyInfoInputs.cache
+C:\Users\ncald\OneDrive\Documents\ElevenFiftyProjects\codingFoundations\dotnetProjects\KomodoInsuranceProject\src\KomodoInsurance.Data\obj\Debug\net6.0\KomodoInsurance.Data.AssemblyInfo.cs
+C:\Users\ncald\OneDrive\Documents\ElevenFiftyProjects\codingFoundations\dotnetProjects\KomodoInsuranceProject\src\KomodoInsurance.Data\obj\Debug\net6.0\KomodoInsurance.Data.csproj.CoreCompileInputs.cache
+C:\Users\ncald\OneDrive\Documents\ElevenFiftyProjects\codingFoundations\dotnetProjects\KomodoInsuranceProject\src\KomodoInsurance.Data\bin\Debug\net6.0\KomodoInsurance.Data.deps.json
+C:\Users\ncald\OneDrive\Documents\ElevenFiftyProjects\codingFoundations\dotnetProjects\KomodoInsuranceProject\src\KomodoInsurance.Data\bin\Debug\net6.0\KomodoInsurance.Data.dll
+C:\Users\ncald\OneDrive\Documents\ElevenFiftyProjects\codingFoundations\dotnetProjects\KomodoInsuranceProject\src\KomodoInsurance.Data\bin\Debug\net6.0\KomodoInsurance.Data.pdb
+C:\Users\ncald\OneDrive\Documents\ElevenFiftyProjects\codingFoundations\dotnetProjects\KomodoInsuranceProject\src\KomodoInsurance.Data\obj\Debug\net6.0\KomodoInsurance.Data.dll
+C:\Users\ncald\OneDrive\Documents\ElevenFiftyProjects\codingFoundations\dotnetProjects\KomodoInsuranceProject\src\KomodoInsurance.Data\obj\Debug\net6.0\refint\KomodoInsurance.Data.dll
+C:\Users\ncald\OneDrive\Documents\ElevenFiftyProjects\codingFoundations\dotnetProjects\KomodoInsuranceProject\src\KomodoInsurance.Data\obj\Debug\net6.0\KomodoInsurance.Data.pdb
+C:\Users\ncald\OneDrive\Documents\ElevenFiftyProjects\codingFoundations\dotnetProjects\KomodoInsuranceProject\src\KomodoInsurance.Data\obj\Debug\net6.0\ref\KomodoInsurance.Data.dll
