@@ -43,9 +43,9 @@ using System.Threading.Tasks;
             return null;
         }
 
-        public bool DoesDevHavePSAccess()
+        public bool PluralsightAccess()
         {
-            if(DoesDevHavePSAccess)
+            if(PluralsightAccess == true)
             {
                 return true;
             }
