@@ -11,13 +11,13 @@ using System.Threading.Tasks;
         {
             Name = name;
         }
-        public DevTeam(string name, List<Developer> developers)
+        public DevTeam(string name, List<Developer> developer)
         {
             Name = name;
-            Developers = developers;
+            Developer = developer;
         }
 
         public int TeamID { get; set; }
         public string Name { get; set; }
-        public List<Developer> Developers { get; set; } = new List<Developer>();
+        public List<Developer> Developer { get; set; } = new List<Developer>();
     }

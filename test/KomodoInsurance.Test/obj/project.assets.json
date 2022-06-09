@@ -1680,6 +1680,19 @@
         "runtime": {
           "bin/placeholder/KomodoInsurance.Data.dll": {}
         }
+      },
+      "KomodoInsurance.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "KomodoInsurance.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/KomodoInsurance.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/KomodoInsurance.Repository.dll": {}
+        }
       }
     }
   },
@@ -5977,11 +5990,17 @@
       "type": "project",
       "path": "../../src/KomodoInsurance.Data/KomodoInsurance.Data.csproj",
       "msbuildProject": "../../src/KomodoInsurance.Data/KomodoInsurance.Data.csproj"
+    },
+    "KomodoInsurance.Repository/1.0.0": {
+      "type": "project",
+      "path": "../../src/KomodoInsurance.Repository/KomodoInsurance.Repository.csproj",
+      "msbuildProject": "../../src/KomodoInsurance.Repository/KomodoInsurance.Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "KomodoInsurance.Data >= 1.0.0",
+      "KomodoInsurance.Repository >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.11.0",
       "coverlet.collector >= 3.1.0",
       "xunit >= 2.4.1",
@@ -6015,6 +6034,9 @@
           "projectReferences": {
             "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\KomodoInsuranceProject\\src\\KomodoInsurance.Data\\KomodoInsurance.Data.csproj": {
               "projectPath": "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\KomodoInsuranceProject\\src\\KomodoInsurance.Data\\KomodoInsurance.Data.csproj"
+            },
+            "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\KomodoInsuranceProject\\src\\KomodoInsurance.Repository\\KomodoInsurance.Repository.csproj": {
+              "projectPath": "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\KomodoInsuranceProject\\src\\KomodoInsurance.Repository\\KomodoInsurance.Repository.csproj"
             }
           }
         }

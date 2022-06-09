@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Xunit;
 
 public class KomodoInsuranceTestingSite
@@ -14,18 +15,18 @@ public class KomodoInsuranceTestingSite
         Assert.Equal(expectedDevID, actualDevID);
     }
 
-    // [Fact]
-    // public void CreateADevTeam()
-    // {
-    //     DevTeam devTeam = new DevTeam();
-    //     devTeam.Developers = new List<Developer>
-    //     {
-    //         new Developer("Steve", "Smith")
-    //     };
+    [Fact]
+    public void CreateADevTeam()
+    {
+        DevTeam devTeam = new DevTeam();
+        devTeam.Developer = new List<Developer>
+        {
+            new Developer("Steve", "Smith")
+        };
 
-    //     int expected = 1;
-    //     int actual = devTeam.Developers.Count;
+        int expected = 1;
+        int actual = devTeam.Developer.Count;
 
-    //     Assert.Equal(expected, actual);
-    // }
+        Assert.Equal(expected, actual);
+    }
 }

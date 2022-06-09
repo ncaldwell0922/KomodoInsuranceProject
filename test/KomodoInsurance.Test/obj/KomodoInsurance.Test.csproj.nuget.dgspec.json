@@ -56,6 +56,62 @@
         }
       }
     },
+    "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\KomodoInsuranceProject\\src\\KomodoInsurance.Repository\\KomodoInsurance.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\KomodoInsuranceProject\\src\\KomodoInsurance.Repository\\KomodoInsurance.Repository.csproj",
+        "projectName": "KomodoInsurance.Repository",
+        "projectPath": "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\KomodoInsuranceProject\\src\\KomodoInsurance.Repository\\KomodoInsurance.Repository.csproj",
+        "packagesPath": "C:\\Users\\ncald\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\KomodoInsuranceProject\\src\\KomodoInsurance.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ncald\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\KomodoInsuranceProject\\src\\KomodoInsurance.Data\\KomodoInsurance.Data.csproj": {
+                "projectPath": "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\KomodoInsuranceProject\\src\\KomodoInsurance.Data\\KomodoInsurance.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\KomodoInsuranceProject\\test\\KomodoInsurance.Test\\KomodoInsurance.Test.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -80,6 +136,9 @@
             "projectReferences": {
               "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\KomodoInsuranceProject\\src\\KomodoInsurance.Data\\KomodoInsurance.Data.csproj": {
                 "projectPath": "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\KomodoInsuranceProject\\src\\KomodoInsurance.Data\\KomodoInsurance.Data.csproj"
+              },
+              "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\KomodoInsuranceProject\\src\\KomodoInsurance.Repository\\KomodoInsurance.Repository.csproj": {
+                "projectPath": "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\KomodoInsuranceProject\\src\\KomodoInsurance.Repository\\KomodoInsurance.Repository.csproj"
               }
             }
           }

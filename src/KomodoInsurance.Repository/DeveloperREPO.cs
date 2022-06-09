@@ -8,7 +8,7 @@ using System.Threading.Tasks;
     {
         private readonly List<Developer> _developerDatabase = new List<Developer>();
 
-        private int _count;
+        private int _count = 0;
 
         public bool AddDeveloperToDatabase(Developer developer)
         {
@@ -36,10 +36,22 @@ using System.Threading.Tasks;
             {
                 if(d.ID == id)
                 {
-                    return e;
+                    return d;
                 }
             }
 
             return null;
+        }
+
+        public bool DoesDevHavePSAccess()
+        {
+            if(DoesDevHavePSAccess)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }

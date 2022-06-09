@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\KomodoInsurance.Data\KomodoInsurance.Data.csproj" />
+    <ProjectReference Include="..\..\src\KomodoInsurance.Repository\KomodoInsurance.Repository.csproj" />
   </ItemGroup>
 
 </Project>

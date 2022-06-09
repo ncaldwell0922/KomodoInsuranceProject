@@ -100,3 +100,5 @@ C:\Users\ncald\OneDrive\Documents\ElevenFiftyProjects\codingFoundations\dotnetPr
 C:\Users\ncald\OneDrive\Documents\ElevenFiftyProjects\codingFoundations\dotnetProjects\KomodoInsuranceProject\test\KomodoInsurance.Test\obj\Debug\net6.0\KomodoInsurance.Test.pdb
 C:\Users\ncald\OneDrive\Documents\ElevenFiftyProjects\codingFoundations\dotnetProjects\KomodoInsuranceProject\test\KomodoInsurance.Test\obj\Debug\net6.0\KomodoInsurance.Test.genruntimeconfig.cache
 C:\Users\ncald\OneDrive\Documents\ElevenFiftyProjects\codingFoundations\dotnetProjects\KomodoInsuranceProject\test\KomodoInsurance.Test\obj\Debug\net6.0\ref\KomodoInsurance.Test.dll
+C:\Users\ncald\OneDrive\Documents\ElevenFiftyProjects\codingFoundations\dotnetProjects\KomodoInsuranceProject\test\KomodoInsurance.Test\bin\Debug\net6.0\KomodoInsurance.Repository.dll
+C:\Users\ncald\OneDrive\Documents\ElevenFiftyProjects\codingFoundations\dotnetProjects\KomodoInsuranceProject\test\KomodoInsurance.Test\bin\Debug\net6.0\KomodoInsurance.Repository.pdb
