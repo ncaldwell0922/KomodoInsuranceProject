@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "KomodoInsurance.UI/1.0.0": {
+        "dependencies": {
+          "KomodoInsurance.Data": "1.0.0",
+          "KomodoInsurance.Repository": "1.0.0"
+        },
+        "runtime": {
+          "KomodoInsurance.UI.dll": {}
+        }
+      },
+      "KomodoInsurance.Data/1.0.0": {
+        "runtime": {
+          "KomodoInsurance.Data.dll": {}
+        }
+      },
+      "KomodoInsurance.Repository/1.0.0": {
+        "dependencies": {
+          "KomodoInsurance.Data": "1.0.0"
+        },
+        "runtime": {
+          "KomodoInsurance.Repository.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "KomodoInsurance.UI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "KomodoInsurance.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "KomodoInsurance.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

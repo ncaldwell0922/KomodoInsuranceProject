@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "KomodoInsurance.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/KomodoInsurance.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/KomodoInsurance.Data.dll": {}
+        }
+      },
+      "KomodoInsurance.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "KomodoInsurance.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/KomodoInsurance.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/KomodoInsurance.Repository.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "KomodoInsurance.Data/1.0.0": {
+      "type": "project",
+      "path": "../KomodoInsurance.Data/KomodoInsurance.Data.csproj",
+      "msbuildProject": "../KomodoInsurance.Data/KomodoInsurance.Data.csproj"
+    },
+    "KomodoInsurance.Repository/1.0.0": {
+      "type": "project",
+      "path": "../KomodoInsurance.Repository/KomodoInsurance.Repository.csproj",
+      "msbuildProject": "../KomodoInsurance.Repository/KomodoInsurance.Repository.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "KomodoInsurance.Data >= 1.0.0",
+      "KomodoInsurance.Repository >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\ncald\\.nuget\\packages\\": {}
@@ -31,7 +69,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\KomodoInsuranceProject\\src\\KomodoInsurance.Data\\KomodoInsurance.Data.csproj": {
+              "projectPath": "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\KomodoInsuranceProject\\src\\KomodoInsurance.Data\\KomodoInsurance.Data.csproj"
+            },
+            "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\KomodoInsuranceProject\\src\\KomodoInsurance.Repository\\KomodoInsurance.Repository.csproj": {
+              "projectPath": "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\KomodoInsuranceProject\\src\\KomodoInsurance.Repository\\KomodoInsurance.Repository.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
