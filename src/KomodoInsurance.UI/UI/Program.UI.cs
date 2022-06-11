@@ -81,8 +81,6 @@ using System.Threading.Tasks;
                     +" 6. Add Developer \n"
                     +" 7. View all Developers \n"
                     +" 8. View a Developer \n"
-                    +" 9. Update a Developer \n"
-                    +" 10. Delete a Developer \n"
                     +"-------------------------------------------- \n"
                     +" X. Close Application \n"
                 );
@@ -106,21 +104,15 @@ using System.Threading.Tasks;
                     case "5":
                         DeleteDeveloperTeam();
                         break;
-                    // case "6":
-                    //     AddDeveloperToDatabase();
-                    //     break;
-                    // case "7":
-                    //     ViewAllDevelopers();
-                    //     break;
-                    // case "8":
-                    //     ViewDeveloperByID();
-                    //     break;
-                    // case "9":
-                    //     UpdateDeveloperByID();
-                    //     break;
-                    // case "9":
-                    //     DeleteDeveloperByID();
-                    //     break;
+                    case "6":
+                        AddDeveloperToDatabase();
+                        break;
+                    case "7":
+                        ViewAllDevelopers();
+                        break;
+                    case "8":
+                        ViewDeveloperByID();
+                        break;
                     case "x":
                         isRunning = CloseApplication();
                         break;
@@ -132,6 +124,7 @@ using System.Threading.Tasks;
                 }
             }
         }
+
 
         private bool CloseApplication()
         {
@@ -257,9 +250,9 @@ using System.Threading.Tasks;
         {
             Console.Clear();
 
+            System.Console.WriteLine("*** Team Developers *** \n");
             System.Console.WriteLine($"Team ID: {thisDevTeam.TeamID} \n" + $"Team Name: {thisDevTeam.Name} \n");
 
-            System.Console.WriteLine("*** Team Developers *** \n");
             if(thisDevTeam.Developer.Count > 0)
             {
                 foreach(var d in thisDevTeam.Developer)
@@ -379,6 +372,74 @@ using System.Threading.Tasks;
 
             PressAnyKey();
         }
+
+        private void AddDeveloperToDatabase()
+        {
+            Console.Clear();
+
+            var newDeveloper = new Developer();
+            System.Console.WriteLine("=== Add A New Developer ===");
+
+            System.Console.WriteLine("First Name: ");
+            newDeveloper.FirstName = Console.ReadLine();
+
+            System.Console.WriteLine("Last Name: ");
+            newDeveloper.LastName = Console.ReadLine();
+
+            bool isSuccessful = _dRepo.AddDeveloperToDatabase(newDeveloper);
+
+            if(isSuccessful)
+            {
+                System.Console.WriteLine($"{newDeveloper.FirstName} {newDeveloper.LastName} was added to the database. ");
+            }
+            else
+            {
+                System.Console.WriteLine("Unable to add developer. Please try again.");
+            }
+            PressAnyKey();
+        }
+
+        private void ViewAllDevelopers()
+        {
+            Console.Clear();
+
+            List<Developer> developersinDB = _dRepo.GetAllDevelopers();
+            if(developersinDB.Count > 0)
+            {
+                foreach (Developer d in developersinDB)
+                {
+                    DisplayDeveloperInfo(d);
+                }
+            }
+            else
+            {
+                System.Console.WriteLine("There are no developers to display.");
+            }
+
+            PressAnyKey();
+        }
+
+        private void ViewDeveloperByID()
+        {
+            Console.Clear();
+
+            System.Console.WriteLine("=== Developer Information ===");
+            System.Console.WriteLine("Enter employee ID: ");
+            int inputDevID = int.Parse(Console.ReadLine());
+
+            Developer developer = _dRepo.GetDeveloperByID(inputDevID);
+            if(developer != null)
+            {
+                DisplayDeveloperInfo(developer);
+            }
+            else
+            {
+                System.Console.WriteLine($"{inputDevID} is not a valid developer ID. Please try again.");
+            }
+
+            PressAnyKey();
+        }
+
 
         //Helper Methods
         private void DisplayDevTeams(DevTeam devTeam) 
