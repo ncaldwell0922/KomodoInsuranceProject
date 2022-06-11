@@ -43,15 +43,5 @@ using System.Threading.Tasks;
             return null;
         }
 
-        // public bool PluralsightAccess()
-        // {
-        //     if(PluralsightAccess == true)
-        //     {
-        //         return true;
-        //     }
-        //     else
-        //     {
-        //         return false;
-        //     }
-        // }
     }
+    

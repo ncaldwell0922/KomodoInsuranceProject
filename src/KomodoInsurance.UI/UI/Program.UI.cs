@@ -17,21 +17,21 @@ using System.Threading.Tasks;
 
         private void SeedData()
         {
-            Developer stan = new Developer("Stan", "Smith");
-            Developer ben = new Developer("Ben", "Wyatt");
-            Developer peter = new Developer("Peter", "Griffin");
-            Developer michael = new Developer("Michael", "Scott");
-            Developer natassia = new Developer("Natassia", "Caldwell");
-            Developer leslie = new Developer("Leslie", "Knope");
-            Developer jessie = new Developer("Jessie", "Spano");
-            Developer annalise = new Developer("Annalise", "Keating");
-            Developer lisa = new Developer("Lisa", "Simpson");
-            Developer rachel = new Developer("Rachel", "Green");
-            Developer sterling = new Developer("Sterling", "Archer");
-            Developer sam = new Developer("Sam", "Malone");
-            Developer dexter = new Developer("Dexter", "Morgan");
-            Developer dana = new Developer("Dana", "Scully");
-            Developer arya = new Developer("Arya", "Stark");
+            Developer stan = new Developer(1, "Stan", "Smith", Pluralsight.Has_Access);
+            Developer ben = new Developer(2, "Ben", "Wyatt", Pluralsight.No_Access);
+            Developer peter = new Developer(3, "Peter", "Griffin", Pluralsight.No_Access);
+            Developer michael = new Developer(4, "Michael", "Scott", Pluralsight.Has_Access);
+            Developer natassia = new Developer(5, "Natassia", "Caldwell", Pluralsight.No_Access);
+            Developer jessie = new Developer(6, "Jessie", "Spano", Pluralsight.Has_Access);
+            Developer leslie = new Developer(7,"Leslie", "Knope", Pluralsight.Has_Access);
+            Developer annalise = new Developer(8, "Annalise", "Keating", Pluralsight.No_Access);
+            Developer lisa = new Developer(9, "Lisa", "Simpson", Pluralsight.Has_Access);
+            Developer rachel = new Developer(10, "Rachel", "Green", Pluralsight.Has_Access);
+            Developer sterling = new Developer(11, "Sterling", "Archer", Pluralsight.No_Access);
+            Developer sam = new Developer(12, "Sam", "Malone", Pluralsight.Has_Access);
+            Developer dexter = new Developer(13, "Dexter", "Morgan", Pluralsight.No_Access);
+            Developer dana = new Developer(14, "Dana", "Scully", Pluralsight.No_Access);
+            Developer arya = new Developer(15, "Arya", "Stark", Pluralsight.No_Access);
 
 
             _dRepo.AddDeveloperToDatabase(stan);
@@ -419,6 +419,16 @@ using System.Threading.Tasks;
             PressAnyKey();
         }
 
+        private void DisplayDeveloperInfo(Developer developer)
+        {
+            System.Console.WriteLine(
+                $"ID: {developer.ID} \n" +
+                $"First Name: {developer.FirstName} \n" +
+                $"Last Name: {developer.LastName} \n" +
+                $"Pluralsight Access: {developer.Pluralsight} \n" 
+            );
+        }
+
         private void ViewDeveloperByID()
         {
             Console.Clear();
@@ -448,10 +458,4 @@ using System.Threading.Tasks;
         }
 
 
-        private void DisplayDeveloperInfo(Developer developer)
-        {
-            System.Console.WriteLine(
-                $" \tDeveloper ID: {developer.ID} \n \tDeveloper Name: {developer.FirstName} {developer.LastName} \n"
-            );
-        }
     } 
