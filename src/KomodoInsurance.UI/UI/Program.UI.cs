@@ -81,9 +81,6 @@ using System.Threading.Tasks;
                     +" 6. Add Developer \n"
                     +" 7. View all Developers \n"
                     +" 8. View a Developer \n"
-                    // +"-------------------------------------------- \n"
-                    // +" \t=== Other === \n"
-                    // // +" 9. View Dev's Pluralsight Access Status \n"
                     +"-------------------------------------------- \n"
                     +" X. Close Application \n"
                 );
@@ -429,33 +426,6 @@ using System.Threading.Tasks;
             PressAnyKey();
         }
 
-        // private void DisplayPSAccess(Developer developer)
-        // {
-        //     Console.Clear();
-
-        //     System.Console.WriteLine("=== Pluralsight Access 2Status Page === \n");
-        //     System.Console.WriteLine("Please choose from the following options: \n" +
-        //     "1. Developers WITH Pluralsight Access \n" +
-        //     "2. Developers WITHOUT Pluralsight Access \n"
-        //     );
-            
-        //     string hrInput = Console.ReadLine();
-        //     List<Developer> developersinDB = _dRepo.GetAllDevelopers();
-        //     switch(hrInput)
-        //     {
-        //         case "1":
-        //             ViewDevWithPSAccess();
-        //             break;
-        //         case "2":
-        //             ViewDevWithNoPSAccess();
-        //             break;
-        //         default:
-        //             DisplayAllDeveloperInfo();
-
-        //     }
-
-        //     PressAnyKey();
-        // }
 
         //Helper Methods
         private void DisplayDevTeams(DevTeam devTeam) 
@@ -516,52 +486,6 @@ using System.Threading.Tasks;
             }
 
         }
-
-        
-        //! Tried to make a list of names with a particular enum value attached to it. Didn't work. Could you explain why? Or rather the correct to do the 1st challenge of project.
-        // private Pluralsight ViewDevWithPSAccess(Developer developer)
-        // {
-        //     Console.Clear();
-        //     System.Console.WriteLine("=== Developers WITH Pluralsight Access === \n");
-        //     foreach(Developer d in developer)
-        //     {
-        //         if(Pluralsight.Has_Access = d)
-        //         {
-        //             DisplayAllDeveloperInfo(d);
-        //         }
-        //         else
-        //         {
-        //             return null;
-        //         }
-        //     }
-        //     return null;
-            
-        //     PressAnyKey();
-        // }
-
-        // private Pluralsight ViewDevWithNoPSAccess(Developer developer)
-        // {
-        //     Console.Clear();
-        //     System.Console.WriteLine("=== Developers WITH NO Pluralsight Access === \n");
-            
-        //     foreach(Developer d in developer)
-        //     {
-        //         if(Pluralsight.No_Access = d)
-        //         {
-        //             DisplayAllDeveloperInfo(d);
-        //         }
-        //         else
-        //         {
-        //             return null;
-        //         }
-        //     }
-            
-        //     return null;
-            
-        //     PressAnyKey();
-        // }
-        
-
 
     }
         
