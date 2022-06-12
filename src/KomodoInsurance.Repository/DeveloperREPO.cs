@@ -43,5 +43,19 @@ using System.Threading.Tasks;
             return null;
         }
 
+        public List<Developer> GivePluralsightInfo(Pluralsight psAccess)
+        {
+            var psList = new List<Developer>();
+            foreach(var developer in _developerDatabase)
+            {
+                if(developer.Pluralsight == psAccess)
+                {
+                    psList.Add(developer);
+                }
+            }
+
+            return psList;
+        }
+
     }
     

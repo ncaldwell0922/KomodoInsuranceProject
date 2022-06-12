@@ -50,9 +50,9 @@ using System.Threading.Tasks;
             _dRepo.AddDeveloperToDatabase(dana);
             _dRepo.AddDeveloperToDatabase(arya);
 
-            DevTeam group_1 = new DevTeam("Rockets");
-            DevTeam group_2 = new DevTeam("Pacers");
-            DevTeam group_3 = new DevTeam("Lakers");
+            DevTeam group_1 = new DevTeam("Rockets", new List<Developer>{stan, jessie, leslie});
+            DevTeam group_2 = new DevTeam("Pacers", new List<Developer>{lisa, dana, sterling});
+            DevTeam group_3 = new DevTeam("Lakers", new List<Developer>{annalise, peter, rachel});
 
             _dtRepo.AddDevTeamToDatabase(group_1);
             _dtRepo.AddDevTeamToDatabase(group_2);
@@ -81,6 +81,9 @@ using System.Threading.Tasks;
                     +" 6. Add Developer \n"
                     +" 7. View all Developers \n"
                     +" 8. View a Developer \n"
+                    // +"-------------------------------------------- \n"
+                    // +" \t=== Other === \n"
+                    // // +" 9. View Dev's Pluralsight Access Status \n"
                     +"-------------------------------------------- \n"
                     +" X. Close Application \n"
                 );
@@ -113,12 +116,15 @@ using System.Threading.Tasks;
                     case "8":
                         ViewDeveloperByID();
                         break;
+                    // case "9":
+                    //     DisplayPSAccess();
+                    //     break;
                     case "x":
                         isRunning = CloseApplication();
                         break;
 
                     default:
-                    System.Console.WriteLine("Invalid Selection. Please Try Again.");
+                    System.Console.WriteLine("Invalid Selection.");
                     break;
 
                 }
@@ -144,11 +150,11 @@ using System.Threading.Tasks;
         {
             Console.Clear();
 
-            DevTeam newDeveloperTeam = new DevTeam();
+            DevTeam developerTeam = new DevTeam();
             var currentDevelopers = _dRepo.GetAllDevelopers();
 
             System.Console.WriteLine("Please enter a name for the Developer Team: ");
-            newDeveloperTeam.Name = System.Console.ReadLine();
+            developerTeam.Name = System.Console.ReadLine();
 
             bool hasAssignedDevelopers = false;
             while(!hasAssignedDevelopers)
@@ -168,7 +174,7 @@ using System.Threading.Tasks;
 
                     if(selectedDeveloper != null)
                     {
-                        newDeveloperTeam.Developer.Add(selectedDeveloper);
+                        developerTeam.Developer.Add(selectedDeveloper);
 
                         currentDevelopers.Remove(selectedDeveloper);
                     }
@@ -185,10 +191,10 @@ using System.Threading.Tasks;
             }
 
 
-            bool isSuccessful = _dtRepo.AddDevTeamToDatabase(newDeveloperTeam);
+            bool isSuccessful = _dtRepo.AddDevTeamToDatabase(developerTeam);
             if(isSuccessful)
             {
-                System.Console.WriteLine($"Developer Team:{newDeveloperTeam.Name} was added to the database!");
+                System.Console.WriteLine($"Developer Team:{developerTeam.Name} was added to the database!");
             }
             else
             {
@@ -218,11 +224,11 @@ using System.Threading.Tasks;
             Console.Clear();
 
             System.Console.WriteLine("=== Developer Team Info ===");
-            var devTeams = _dtRepo.GetAllTeams();
+            var teamsInDB = _dtRepo.GetAllTeams();
 
-            foreach(DevTeam t in devTeams)
+            foreach(DevTeam t in teamsInDB)
             {
-                DisplayDevTeamInfo(t);
+                DisplayDevTeams(t);
             }
             try
             {
@@ -232,7 +238,7 @@ using System.Threading.Tasks;
 
                 if(selectedDevTeam != null)
                 {
-                    DisplayDevTeams(selectedDevTeam);
+                    DisplayDevTeamInfo(selectedDevTeam);
                 }
                 else
                 {
@@ -241,31 +247,11 @@ using System.Threading.Tasks;
             }
             catch
             {
-                System.Console.WriteLine("Sorry, invalid selection. Please try again.");
+                System.Console.WriteLine("Sorry, invalid selection.");
             }
             PressAnyKey();
         }
 
-        private void DisplayDevTeamInfo(DevTeam thisDevTeam)
-        {
-            Console.Clear();
-
-            System.Console.WriteLine("*** Team Developers *** \n");
-            System.Console.WriteLine($"Team ID: {thisDevTeam.TeamID} \n" + $"Team Name: {thisDevTeam.Name} \n");
-
-            if(thisDevTeam.Developer.Count > 0)
-            {
-                foreach(var d in thisDevTeam.Developer)
-                {
-                    DisplayDeveloperInfo(d);
-                }
-            }
-            else
-            {
-                System.Console.WriteLine("There is no developers in this team.");
-            }
-            PressAnyKey();
-        }
 
         private void UpdateDeveloperTeam()
         {
@@ -313,7 +299,7 @@ using System.Threading.Tasks;
                         }
                         else
                         {
-                            System.Console.WriteLine("Sorry, that developer does not exist. Please try again.");
+                            System.Console.WriteLine("Sorry, that developer does not exist.");
                         }
                     }
                     else
@@ -329,12 +315,12 @@ using System.Threading.Tasks;
                 }
                 else
                 {
-                    System.Console.WriteLine("Dev Team failed to update. Please try again.");
+                    System.Console.WriteLine("Dev Team failed to update.");
                 }
             }
             else
             {
-                System.Console.WriteLine($"The store with ID: {userInput} isn't valid. Please try again.");
+                System.Console.WriteLine($"The store with ID: {userInput} isn't valid.");
             }
 
             PressAnyKey();
@@ -362,12 +348,12 @@ using System.Threading.Tasks;
                 }
                 else
                 {
-                    System.Console.WriteLine("Team was not deleted. Please try again.");
+                    System.Console.WriteLine("Team was not deleted. ");
                 }
             }
             catch
             {
-                System.Console.WriteLine("Incorrect selection. Please try again.");
+                System.Console.WriteLine("Incorrect selection. ");
             }
 
             PressAnyKey();
@@ -386,6 +372,8 @@ using System.Threading.Tasks;
             System.Console.WriteLine("Last Name: ");
             newDeveloper.LastName = Console.ReadLine();
 
+            newDeveloper.Pluralsight = GivePluralsightInfo(newDeveloper);
+
             bool isSuccessful = _dRepo.AddDeveloperToDatabase(newDeveloper);
 
             if(isSuccessful)
@@ -394,7 +382,7 @@ using System.Threading.Tasks;
             }
             else
             {
-                System.Console.WriteLine("Unable to add developer. Please try again.");
+                System.Console.WriteLine("Unable to add developer.");
             }
             PressAnyKey();
         }
@@ -408,7 +396,7 @@ using System.Threading.Tasks;
             {
                 foreach (Developer d in developersinDB)
                 {
-                    DisplayDeveloperInfo(d);
+                    DisplayAllDeveloperInfo(d);
                 }
             }
             else
@@ -419,15 +407,6 @@ using System.Threading.Tasks;
             PressAnyKey();
         }
 
-        private void DisplayDeveloperInfo(Developer developer)
-        {
-            System.Console.WriteLine(
-                $"ID: {developer.ID} \n" +
-                $"First Name: {developer.FirstName} \n" +
-                $"Last Name: {developer.LastName} \n" +
-                $"Pluralsight Access: {developer.Pluralsight} \n" 
-            );
-        }
 
         private void ViewDeveloperByID()
         {
@@ -440,22 +419,149 @@ using System.Threading.Tasks;
             Developer developer = _dRepo.GetDeveloperByID(inputDevID);
             if(developer != null)
             {
-                DisplayDeveloperInfo(developer);
+                DisplayAllDeveloperInfo(developer);
             }
             else
             {
-                System.Console.WriteLine($"{inputDevID} is not a valid developer ID. Please try again.");
+                System.Console.WriteLine($"{inputDevID} is not a valid developer ID.");
             }
 
             PressAnyKey();
         }
 
+        // private void DisplayPSAccess(Developer developer)
+        // {
+        //     Console.Clear();
+
+        //     System.Console.WriteLine("=== Pluralsight Access 2Status Page === \n");
+        //     System.Console.WriteLine("Please choose from the following options: \n" +
+        //     "1. Developers WITH Pluralsight Access \n" +
+        //     "2. Developers WITHOUT Pluralsight Access \n"
+        //     );
+            
+        //     string hrInput = Console.ReadLine();
+        //     List<Developer> developersinDB = _dRepo.GetAllDevelopers();
+        //     switch(hrInput)
+        //     {
+        //         case "1":
+        //             ViewDevWithPSAccess();
+        //             break;
+        //         case "2":
+        //             ViewDevWithNoPSAccess();
+        //             break;
+        //         default:
+        //             DisplayAllDeveloperInfo();
+
+        //     }
+
+        //     PressAnyKey();
+        // }
 
         //Helper Methods
         private void DisplayDevTeams(DevTeam devTeam) 
         {
-            System.Console.WriteLine($"Developer Team: {devTeam.TeamID} \n Team Name: {devTeam.Name}\n");
+            System.Console.WriteLine($"\tDeveloper Team: {devTeam.TeamID} \n \tTeam Name: {devTeam.Name} \n");
+            
+        }
+        private void DisplayDevTeamInfo(DevTeam thisDevTeam)
+        {
+            Console.Clear();
+
+            System.Console.WriteLine("*** Developer Teams *** \n");
+            System.Console.WriteLine($"Team ID: {thisDevTeam.TeamID} \n" + $"Team Name: {thisDevTeam.Name} \n");
+
+            if(thisDevTeam.Developer.Count > 0)
+            {
+                foreach(var d in thisDevTeam.Developer)
+                {
+                    DisplayAllDeveloperInfo(d);
+                }
+            }
+            else
+            {
+                System.Console.WriteLine("There is no developers in this team.");
+            }
+            PressAnyKey();
         }
 
+        private void DisplayAllDeveloperInfo(Developer developer)
+        {
+            System.Console.WriteLine(
+                $"ID: {developer.ID} \n" +
+                $"First Name: {developer.FirstName} \n" +
+                $"Last Name: {developer.LastName} \n" +
+                $"Pluralsight Access: {developer.Pluralsight} \n" 
+            );
+        }
 
-    } 
+        private Pluralsight GivePluralsightInfo(Developer developer)
+        {
+            System.Console.WriteLine("Do they have access to Pluralsight? y/n? \n" +
+            
+            "1. Yes \n" +
+            "2. No \n"
+            );
+
+            string pluralsight = Console.ReadLine();
+            switch(pluralsight)
+            {
+                case "1":
+                    return Pluralsight.Has_Access;
+                case "2":
+                    return Pluralsight.No_Access;
+                default:
+                    System.Console.WriteLine("Invalid selection");
+                    return Pluralsight.No_Access;
+                    PressAnyKey();
+            }
+
+        }
+
+        // private Pluralsight ViewDevWithPSAccess(Developer developer)
+        // {
+        //     Console.Clear();
+        //     System.Console.WriteLine("=== Developers WITH Pluralsight Access === \n");
+        //     foreach(Developer d in developer)
+        //     {
+        //         if(Pluralsight.Has_Access = d)
+        //         {
+        //             DisplayAllDeveloperInfo(d);
+        //         }
+        //         else
+        //         {
+        //             return null;
+        //         }
+        //     }
+        //     return null;
+            
+        //     PressAnyKey();
+        // }
+
+        // private Pluralsight ViewDevWithNoPSAccess(Developer developer)
+        // {
+        //     Console.Clear();
+        //     System.Console.WriteLine("=== Developers WITH NO Pluralsight Access === \n");
+            
+        //     foreach(Developer d in developer)
+        //     {
+        //         if(Pluralsight.No_Access = d)
+        //         {
+        //             DisplayAllDeveloperInfo(d);
+        //         }
+        //         else
+        //         {
+        //             return null;
+        //         }
+        //     }
+            
+        //     return null;
+            
+        //     PressAnyKey();
+        // }
+        
+
+
+    }
+        
+        
+        
