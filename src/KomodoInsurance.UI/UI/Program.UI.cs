@@ -517,6 +517,8 @@ using System.Threading.Tasks;
 
         }
 
+        
+        //! Tried to make a list of names with a particular enum value attached to it. Didn't work. Could you explain why? Or rather the correct to do the 1st challenge of project.
         // private Pluralsight ViewDevWithPSAccess(Developer developer)
         // {
         //     Console.Clear();
